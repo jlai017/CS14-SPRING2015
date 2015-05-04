@@ -1,3 +1,8 @@
+//  =============== BEGIN ASSESSMENT HEADER ================
+/// Joshua Lai
+/// 861163421
+/// 4 May 2015
+//  ================== END ASSESSMENT HEADER ===============
 #ifndef LAB3_H
 #define LAB3_H
 #include <queue>
@@ -49,7 +54,7 @@ struct compare
 {
     bool operator()(Entry a, Entry b) const
     {
-        return a > b;
+        return (a.first + a.second) > (b.first + b.second);
     }
 };
 void orderCoPrime(int m, int n, int k, priority_queue<Entry, vector<Entry>, compare> &a)
@@ -72,7 +77,7 @@ void orderCoPrimePrint(int k)
      orderCoPrime(3, 1, k, a);
      
      cout << "sorted" << endl;
-     for(unsigned i = 0; i < a.size(); i++)
+     while(!a.empty())
      {
          cout << a.top().first << ' ' << a.top().second << endl;
          a.pop();
